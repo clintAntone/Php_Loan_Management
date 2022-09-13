@@ -60,7 +60,7 @@ CREATE TABLE `loan_list` (
   `purpose` text NOT NULL,
   `amount` double NOT NULL,
   `plan_id` int(30) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 0 COMMENT '0= request, 1= confrimed,2=released,3=complteted,4=denied\r\n',
+  `status` tinyint(1) NOT NULL DEFAULT 0 COMMENT '0= request, 1= confirmed,2=released,3=completed,4=denied\r\n',
   `date_released` datetime NOT NULL,
   `date_created` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
