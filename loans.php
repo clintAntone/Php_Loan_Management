@@ -56,7 +56,6 @@
 								while($p = $payments->fetch_assoc()){
 									$sum_paid += ($p['amount'] - $p['penalty_amount']);
 								}
-
 						 ?>
 						 <tr>
 						 	
@@ -140,7 +139,9 @@
 	$('.delete_loan').click(function(){
 		_conf("Are you sure to delete this data?","delete_loan",[$(this).attr('data-id')])
 	})
-function delete_loan($id){
+
+
+	function delete_loan($id){
 		start_load()
 		$.ajax({
 			url:'ajax.php?action=delete_loan',
@@ -157,4 +158,7 @@ function delete_loan($id){
 			}
 		})
 	}
+
+	
+
 </script>

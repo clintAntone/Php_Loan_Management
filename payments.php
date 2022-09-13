@@ -86,10 +86,10 @@
 <script>
 	$('#loan-list').dataTable()
 	$('#new_payments').click(function(){
-		uni_modal("New Payement","manage_payment.php",'mid-large')
+		uni_modal("New Payment","manage_payment.php",'mid-large')
 	})
 	$('.edit_payment').click(function(){
-		uni_modal("Edit Payement","manage_payment.php?id="+$(this).attr('data-id'),'mid-large')
+		uni_modal("Edit Payment","manage_payment.php?id="+$(this).attr('data-id'),'mid-large')
 	})
 	$('.delete_payment').click(function(){
 		_conf("Are you sure to delete this data?","delete_payment",[$(this).attr('data-id')])

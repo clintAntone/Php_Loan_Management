@@ -15,7 +15,7 @@ foreach($qry->fetch_array() as $k => $v){
 			<div class="col-md-6">
 				<label class="control-label">Borrower</label>
 				<?php
-				$borrower = $conn->query("SELECT *,concat(lastname,', ',firstname,' ',middlename) as name FROM borrowers order by concat(lastname,', ',firstname,' ',middlename) asc ");
+				$borrower = $conn->query("SELECT *,concat(lastname,', ',firstname,' ',middlename) as name FROM borrowers WHERE id NOT IN (SELECT borrower_id FROM loan_list WHERE status = '3') order by concat(lastname,', ',firstname,' ',middlename) asc ");
 				?>
 				<select name="borrower_id" id="borrower_id" class="custom-select browser-default select2">
 					<option value=""></option>
@@ -96,12 +96,11 @@ foreach($qry->fetch_array() as $k => $v){
 		<div id="row-field">
 			<div class="row ">
 				<div class="col-md-12 text-center">
-					<button class="btn btn-primary btn-sm " >Save</button>
+					<button class="btn btn-primary btn-sm">Save</button>
 					<button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Cancel</button>
 				</div>
 			</div>
 		</div>
-		
 	</form>
 	</div>
 </div>

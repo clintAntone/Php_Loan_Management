@@ -1,8 +1,8 @@
 <?php include 'db_connect.php' ?>
 <?php 
 extract($_POST);
-if(isset($id)){
-	$qry = $conn->query("SELECT * FROM payments where id=".$id);
+if(isset($_GET['id'])){
+	$qry = $conn->query("SELECT * FROM payments where id=".$_GET['id']);
 	foreach($qry->fetch_array() as $k => $val){
 		$$k = $val;
 	}
